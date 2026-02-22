@@ -29,12 +29,12 @@ const RxItemSchema = z.object({
 const ConsultationSchema = z.object({
     hpi: z.string().min(5, 'Please describe the history of presenting illness'),
     diagnosis: z.string().min(1, 'Required'),
-    diagnosisCode: z.string().optional().default(''),
-    eyeFindings: z.string().optional().default(''),
+    diagnosisCode: z.string(),
+    eyeFindings: z.string(),
     prescription: z.array(RxItemSchema),
-    followUpDays: z.number().min(0).max(365).default(30),
-    referral: z.string().optional().default(''),
-    notes: z.string().optional().default(''),
+    followUpDays: z.number().min(0).max(365),
+    referral: z.string(),
+    notes: z.string(),
 });
 
 type ConsultationFormType = z.infer<typeof ConsultationSchema>;
