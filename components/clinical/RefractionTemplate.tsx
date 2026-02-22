@@ -24,7 +24,7 @@ const RefractionSchema = z.object({
     axisLeft: z.string().min(1, 'Required'),
     iopRight: z.string().min(1, 'Required'),
     iopLeft: z.string().min(1, 'Required'),
-    notes: z.string().optional().default(''),
+    notes: z.string(),
 });
 
 type RefractionForm = z.infer<typeof RefractionSchema>;

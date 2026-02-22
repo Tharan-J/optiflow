@@ -16,7 +16,7 @@ const DilationSchema = z.object({
     drugUsed: z.enum(['Tropicamide', 'Phenylephrine', 'Tropicamide+Phenylephrine']),
     eyeTreated: z.enum(['OD', 'OS', 'OU']),
     dropTime: z.string().min(1, 'Required'),
-    notes: z.string().optional().default(''),
+    notes: z.string(),
 });
 
 type DilationForm = z.infer<typeof DilationSchema>;
